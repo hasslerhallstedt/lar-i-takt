@@ -31,7 +31,7 @@ gs3=pygame.mixer.Sound(pf3)
 channel3 = pygame.mixer.Channel(2)  # Use channel 1
 
 
-df=pd.read_csv(filnamn,sep=';')
+df=pd.read_csv(filnamn,sep=';',encoding='utf-8')
 print(df.head())
 df['tid']=df['tid'].astype('float')
 #print(df['merge_ord'])

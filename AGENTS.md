@@ -26,6 +26,7 @@
 
 ## Data format notes
 - `nyfil_gang-1.csv` uses `;` as the separator.
+- CSV is read as UTF-8 (`encoding="utf-8"` in `po.py`).
 - `plats` values expected by the script are `mitten`, `Vhörn`, `Hhörn`.
 - `ratt` is used to flag scoring moments (1 = scoreable).
 
