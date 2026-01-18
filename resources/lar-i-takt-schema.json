@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "lar-i-takt-content": {"$ref": "#/definitions/lar-i-takt-content_type"}
+    },
+    "definitions": {
+        "responses_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "element": {"type": "string"},
+                    "place_index": {"type": "integer"},
+                    "correct": {"type": "string"}
+                },
+                "required": [
+                    "place_index",
+                    "correct",
+                    "element"
+                ]
+            }
+        },
+        "lar-i-takt-content_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "timestamp": {"type": "string"},
+                    "question": {"type": "string"},
+                    "place_index": {"type": "integer"},
+                    "responses": {"$ref": "#/definitions/responses_type"}
+                },
+                "required": [
+                    "question",
+                    "responses",
+                    "timestamp"
+                ]
+            }
+        }
+    }
+}
