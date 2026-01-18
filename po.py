@@ -153,6 +153,7 @@ def main():
             cv2.circle(frame, HL, 40, (0, 0, 255), 2)
 
         cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
+        cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
         ts = "Score: " + str(score)
         text_w, text_h = renderer.size(ts)
         textX = (w - text_w) / 2
