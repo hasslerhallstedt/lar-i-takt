@@ -4,3 +4,4 @@ numpy
 pandas
 pygame
 matplotlib
+Pillow

@@ -10,11 +10,13 @@ from config import (
     POSE_MODEL_PATH,
     RADIUS_CLAP,
     RADIUS_TARGET,
-    TEXT_SCALE,
+    FONT_SIZE,
+    FONT_PATH,
 )
 from geometry import distance, get_angle
 from pose_tracker import PoseTracker
 from timeline import load_timeline
+from text_renderer import TextRenderer
 
 
 def target_positions(width, height):
@@ -39,8 +41,9 @@ def draw_targets(frame, centers, alpha, base_frame):
     return cv2.addWeighted(frame, alpha, base_frame, 1 - alpha, 0)
 
 
-def draw_text_overlays(frame, idd, orden, plats, text_offsets, font, font_scale, color, thickness):
+def draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color):
     h, w, _ = frame.shape
+    items = []
     for idx in idd[0]:
         word = orden[idx]
         place = plats[idx]
@@ -49,21 +52,15 @@ def draw_text_overlays(frame, idd, orden, plats, text_offsets, font, font_scale,
         if len(str(place)) < 4:
             place = "mitten"
         try:
-            textsize = cv2.getTextSize(str(word), font, font_scale * TEXT_SCALE, thickness)[0]
-            text_x = (w - textsize[0]) / 2 + text_offsets[place][0]
-            text_y = (h + textsize[1]) / 2 + text_offsets[place][1]
-            cv2.putText(
-                frame,
-                str(word),
-                (int(text_x), int(text_y)),
-                font,
-                font_scale * TEXT_SCALE,
-                color,
-                thickness,
-                cv2.LINE_AA,
-            )
+            text_w, text_h = renderer.size(str(word))
+            text_x = (w - text_w) / 2 + text_offsets[place][0]
+            text_y = (h + text_h) / 2 + text_offsets[place][1]
+            items.append({"text": word, "x": int(text_x), "y": int(text_y), "color": color})
         except ValueError:
             pass
+    if items:
+        frame = renderer.draw(frame, items)
+    return frame
 
 
 def main():
@@ -76,11 +73,9 @@ def main():
     tracker = PoseTracker(POSE_MODEL_PATH)
     cap = cv2.VideoCapture(0)
 
-    font = cv2.FONT_HERSHEY_DUPLEX
-    font_scale = 1
+    renderer = TextRenderer(font_size=FONT_SIZE, font_path=FONT_PATH)
     color1 = (0, 0, 0)
     color2 = (255, 255, 255)
-    thickness = 2
     score = 0
     pointl = []
     indr = np.where(ratt == 1)[0]
@@ -117,7 +112,7 @@ def main():
         else:
             ind2 = []
 
-        draw_text_overlays(frame, idd, orden, plats, text_offsets, font, font_scale, color1, thickness)
+        frame = draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color1)
 
         landmarks = []
         if pose_landmarks:
@@ -159,10 +154,10 @@ def main():
 
         cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
         ts = "Score: " + str(score)
-        textsize = cv2.getTextSize(ts, font, font_scale, thickness)[0]
-        textX = (w - textsize[0]) / 2
-        textY = (h + textsize[1]) / 2 + int(h / 3.5)
-        cv2.putText(frame, ts, (int(textX), int(textY)), font, font_scale, color2, thickness, cv2.LINE_AA)
+        text_w, text_h = renderer.size(ts)
+        textX = (w - text_w) / 2
+        textY = (h + text_h) / 2 + int(h / 3.5)
+        frame = renderer.draw(frame, [{"text": ts, "x": int(textX), "y": int(textY), "color": color2}])
         cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) == ord("q"):

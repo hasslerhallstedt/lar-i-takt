@@ -26,7 +26,7 @@ class PoseTracker:
                 base_options=mp_python.BaseOptions(model_asset_path=model_path),
                 running_mode=vision.RunningMode.VIDEO,
                 num_poses=1,
-                output_segmentation_masks=False,
+                output_segmentation_masks=True,
             )
         )
 

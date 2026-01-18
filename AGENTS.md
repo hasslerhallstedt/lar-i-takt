@@ -1,13 +1,18 @@
 # AGENTS.md
 
 ## Project summary
-- Single-file Python prototype that uses MediaPipe + OpenCV + Pygame to run a clapping/pose timing game driven by a CSV timeline.
+- Pose-based clapping/timing game built with MediaPipe Tasks, OpenCV, and Pygame.
 - Uses webcam input, renders targets/text overlays, and scores claps based on hand positions and timing windows.
+- Timeline can be loaded from CSV or JSON (schema in `resources/lar-i-takt-schema.json`).
 
 ## Key files
-- `po.py`: main script; loads CSV timeline, initializes audio, processes webcam frames, and scores claps.
-- `nyfil_gang-1.csv`: timeline data with columns `tid`, `ord`, `plats`, `ratt` (semicolon-separated).
-- `pop.wav`: sound effect referenced by `po.py`.
+- `po.py`: main game loop; orchestrates timeline load, audio, pose detection, rendering, and scoring.
+- `config.py`: constants for asset paths and thresholds.
+- `timeline.py`: loads timeline from CSV (`tid;ord;plats;ratt`) or JSON per `resources/lar-i-takt-schema.json`.
+- `pose_tracker.py`: wraps MediaPipe Tasks PoseLandmarker model.
+- `audio_manager.py`: handles music/pop sounds.
+- `geometry.py`: small math helpers.
+- Assets: `nyfil_gang-1.csv`, `pop.wav`, `Back on track.wav`, `pose_landmarker_full.task` (model), optional JSON content (`resources/lar-i-takt-content.json`).
 
 ## Runtime requirements
 - Python 3 with: `opencv-python`, `mediapipe`, `numpy`, `pandas`, `pygame`, `matplotlib`.
@@ -24,13 +29,17 @@
   - `python3 po.py`
 - Quit the app by pressing `q` in the OpenCV window.
 
+## Architecture & APIs
+- MediaPipe Tasks PoseLandmarker (`mediapipe.tasks.python.vision.PoseLandmarker`) with `detect_for_video` on `ImageFormat.SRGB` frames; model path from `POSE_LANDMARKER_MODEL_PATH` or `pose_landmarker_full.task`.
+- OpenCV for capture/render and simple overlays; Pygame for audio and timing.
+- Modular layout: `po.py` (orchestrator), `config.py` (paths/constants), `timeline.py` (CSV/JSON ingestion), `pose_tracker.py` (model setup/detect/draw), `audio_manager.py`, `geometry.py`.
+- Targets are fixed to three positions; clap detection compares both hands to target centers within `RADIUS_CLAP`.
+
 ## Data format notes
-- `nyfil_gang-1.csv` uses `;` as the separator.
-- CSV is read as UTF-8 (`encoding="utf-8"` in `po.py`).
-- `plats` values expected by the script are `mitten`, `Vhörn`, `Hhörn`.
-- `ratt` is used to flag scoring moments (1 = scoreable).
+- CSV: `;` separator, UTF-8. Columns: `tid` (float seconds), `ord` (text), `plats` (`mitten|Vhörn|Hhörn`), `ratt` (1=scoreable).
+- JSON: see `resources/lar-i-takt-schema.json`; example in `resources/lar-i-takt-content.json`. `timestamp` + `question` + optional responses with `correct="true"` map into the same internal columns.
 
 ## Agent guidelines
-- Preserve the current file naming and relative paths; the script relies on them.
-- Avoid large refactors unless requested; this is a single-file prototype.
-- If adding new assets, keep them in the project root and update `po.py` accordingly.
+- Preserve current file naming and relative paths; the game expects assets in the repo root unless paths are updated in `config.py`.
+- Avoid large refactors unless requested; modular structure is already in place.
+- If adding new assets, keep them in the project root and update `config.py` accordingly.
