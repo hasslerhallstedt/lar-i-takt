@@ -23,16 +23,18 @@ def _load_json(path):
     items = data.get("lar-i-takt-content", [])
     rows = []
     for item in items:
-        timestamp = float(item.get("timestamp", 0))
+        base_timestamp = float(item.get("timestamp", 0))
         question = item.get("question", "")
         question_place = _place_from_index(item.get("place_index", 1))
-        rows.append({"tid": timestamp, "ord": question, "plats": question_place, "ratt": 0})
+        rows.append({"tid": base_timestamp, "ord": question, "plats": question_place, "ratt": 0})
 
         for resp in item.get("responses", []) or []:
             correct_flag = str(resp.get("correct", "")).lower() == "true"
             element = resp.get("element", "")
-            place = _place_from_index(resp.get("place_index", item.get("place_index", 1)))
-            rows.append({"tid": timestamp, "ord": element, "plats": place, "ratt": 1 if correct_flag else 0})
+            place_index = resp.get("place_index", item.get("place_index", 1))
+            place = _place_from_index(place_index)
+            ts = base_timestamp + (0.4 if int(place_index) in (2, 3) else 0.0)
+            rows.append({"tid": ts, "ord": element, "plats": place, "ratt": 1 if correct_flag else 0})
 
     df = pd.DataFrame(rows, columns=["tid", "ord", "plats", "ratt"])
     return df

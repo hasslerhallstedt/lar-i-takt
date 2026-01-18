@@ -12,6 +12,7 @@ from config import (
     RADIUS_TARGET,
     FONT_SIZE,
     FONT_PATH,
+    BACKGROUND_IMAGE,
 )
 from geometry import distance, get_angle
 from pose_tracker import PoseTracker
@@ -72,6 +73,8 @@ def main():
     start_time_ms = audio.ensure_music() or pygame.time.get_ticks()
     tracker = PoseTracker(POSE_MODEL_PATH)
     cap = cv2.VideoCapture(0)
+    cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
+    cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
     renderer = TextRenderer(font_size=FONT_SIZE, font_path=FONT_PATH)
     color1 = (0, 0, 0)
@@ -79,6 +82,8 @@ def main():
     score = 0
     pointl = []
     indr = np.where(ratt == 1)[0]
+    screen_w = None
+    screen_h = None
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -86,11 +91,11 @@ def main():
             print("No frame from camera, exiting.")
             break
         frame = cv2.flip(frame, 1)
-        base_frame = frame.copy()
 
         elapsed_time = (pygame.time.get_ticks() - start_time_ms) / 1000
         dif = tid - elapsed_time
         idd = np.where((dif < 0) & (dif > -1.4))
+        idd_text = np.where((dif < 0) & (dif > -1.0))  # clear text after 1s
         dif2 = dif[indr]
         idd2 = indr[np.where((dif2 < 1.5) & (dif2 > -1.5))[0]]
         if len(idd2) > 0:
@@ -99,12 +104,18 @@ def main():
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_timestamp_ms = int(max(0, pygame.time.get_ticks() - start_time_ms))
         pose_landmarks = tracker.detect(frame_rgb, frame_timestamp_ms)
-        tracker.draw(frame, pose_landmarks)
 
         h, w, _ = frame_rgb.shape
         centers, text_offsets = target_positions(w, h)
-        alpha = 0.7
-        frame = draw_targets(frame, centers, alpha, base_frame)
+        bg_img = None
+        try:
+            bg_img = cv2.imread(BACKGROUND_IMAGE)
+            if bg_img is not None:
+                bg_img = cv2.resize(bg_img, (w, h))
+        except Exception:
+            bg_img = None
+        base_frame = bg_img if bg_img is not None else np.full((h, w, 3), 128, dtype=np.uint8)
+        frame = draw_targets(base_frame.copy(), centers, alpha=0.7, base_frame=base_frame)
 
         if len(idd[0]) == 2:
             pr = idd[0][np.where(ratt[idd[0]] == 1)[0]]
@@ -112,7 +123,7 @@ def main():
         else:
             ind2 = []
 
-        frame = draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color1)
+        frame = draw_text_overlays(frame, idd_text, orden, plats, text_offsets, renderer, color1)
 
         landmarks = []
         if pose_landmarks:
@@ -149,6 +160,7 @@ def main():
                             print("SCORE!")
             except Exception:
                 pass
+            tracker.draw(frame, pose_landmarks)
             cv2.circle(frame, HR, 40, (0, 255, 0), 2)
             cv2.circle(frame, HL, 40, (0, 0, 255), 2)
 
@@ -159,7 +171,15 @@ def main():
         textX = (w - text_w) / 2
         textY = (h + text_h) / 2 + int(h / 3.5)
         frame = renderer.draw(frame, [{"text": ts, "x": int(textX), "y": int(textY), "color": color2}])
-        cv2.imshow("frame", frame)
+        if screen_w is None or screen_h is None:
+            try:
+                wx, wy, ww, wh = cv2.getWindowImageRect("frame")
+                if ww > 0 and wh > 0:
+                    screen_w, screen_h = ww, wh
+            except Exception:
+                screen_w, screen_h = w, h
+        output_frame = cv2.resize(frame, (screen_w or w, screen_h or h))
+        cv2.imshow("frame", output_frame)
 
         if cv2.waitKey(1) == ord("q"):
             break

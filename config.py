@@ -8,6 +8,7 @@ MUSIC_SOUND = "resources/Back on track.wav"
 POSE_MODEL_PATH = os.getenv("POSE_LANDMARKER_MODEL_PATH", "pose_landmarker_full.task")
 FONT_SIZE = 96
 FONT_PATH = "/Users/maan/src/maan/lar-i-takt/resources/Roboto-Black.ttf"
+BACKGROUND_IMAGE = "resources/background.jpg"
 #FONT_PATH = "/System/Library/Fonts/Supplemental/Arial.ttf"  # change if you want another TTF
 
 # Visuals and thresholds
