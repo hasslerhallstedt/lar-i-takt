@@ -124,6 +124,17 @@ class StartState:
     countdown_seconds: int = 5
 
 
+def load_background_frame(width, height):
+    """Load and resize the background once; fall back to a flat gray."""
+    try:
+        bg_img = cv2.imread(BACKGROUND_IMAGE)
+        if bg_img is not None:
+            return cv2.resize(bg_img, (width, height))
+    except Exception:
+        pass
+    return np.full((height, width, 3), 128, dtype=np.uint8)
+
+
 def handle_start_screen(frame, renderer, color, start_state, click_state, audio):
     """Render start button + countdown; update state when clicked/finished."""
     h, w, _ = frame.shape
