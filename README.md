@@ -18,7 +18,7 @@ Requirements:
 ## How it works
 - `po.py` orchestrates the loop; timelines are loaded via `timeline.py`:
   - CSV: `tid;ord;plats;ratt` (UTF-8, semicolon-separated).
-  - JSON: conforms to `resources/lar-i-takt-schema.json` (see `resources/lar-i-takt-content.json`).
+  - JSON: conforms to `resources/lar-i-takt-schema.json` (see `resources/lar-i-takt-content.json`); uses question timestamps and response-level timestamps when provided.
 - MediaPipe Tasks PoseLandmarker runs per frame (`pose_landmarker_full.task` or `POSE_LANDMARKER_MODEL_PATH` env var).
 - Three targets (left, middle, right). Claps are detected when both hands enter the same target radius near scheduled times (`ratt=1` rows).
 - Press `q` to quit.

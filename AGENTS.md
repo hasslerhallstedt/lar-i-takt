@@ -37,7 +37,7 @@
 
 ## Data format notes
 - CSV: `;` separator, UTF-8. Columns: `tid` (float seconds), `ord` (text), `plats` (`mitten|Vhörn|Hhörn`), `ratt` (1=scoreable).
-- JSON: see `resources/lar-i-takt-schema.json`; example in `resources/lar-i-takt-content.json`. `timestamp` + `question` + optional responses with `correct="true"` map into the same internal columns.
+- JSON: see `resources/lar-i-takt-schema.json`; example in `resources/lar-i-takt-content.json`. `timestamp` + `question` + optional responses with `correct="true"` map into the same internal columns, and response-level timestamps are used when present.
 
 ## Agent guidelines
 - Preserve current file naming and relative paths; the game expects assets in the repo root unless paths are updated in `config.py`.

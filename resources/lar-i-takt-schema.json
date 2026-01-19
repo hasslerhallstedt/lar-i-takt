@@ -11,6 +11,7 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "timestamp": {"type": "string"},
                     "element": {"type": "string"},
                     "place_index": {"type": "integer"},
                     "correct": {"type": "string"}
