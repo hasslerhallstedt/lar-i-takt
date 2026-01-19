@@ -23,17 +23,8 @@ class TextRenderer:
 
     def _load_font(self, font_path, font_size):
         cwd = Path.cwd()
-        system_fonts = [
-            Path("/System/Library/Fonts/Supplemental/Arial.ttf"),
-            Path("/Library/Fonts/Arial.ttf"),
-            Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
-        ]
         candidates = [
-            font_path,
-            cwd / "DejaVuSans.ttf",
-            cwd / "resources" / "DejaVuSans.ttf",
-            _default_font_path(),
-            *system_fonts,
+            font_path
         ]
         for candidate in candidates:
             if not candidate:
