@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import pygame
+from dataclasses import dataclass
 
 from audio_manager import AudioManager
 from config import (
@@ -16,7 +17,7 @@ from config import (
     BACKGROUND_IMAGE,
     SHOW_FACE_MESH,
 )
-from geometry import distance, get_angle
+from geometry import distance
 from face_mesh_tracker import FaceMeshTracker
 from pose_tracker import PoseTracker
 from timeline import load_timeline
@@ -114,13 +115,164 @@ def draw_hand_circles(frame, hand_right, hand_left, radius=40, color=(64, 64, 64
     return frame
 
 
+@dataclass
+class StartState:
+    started: bool = False
+    triggered: bool = False
+    countdown_start_ms: int | None = None
+    start_time_ms: int | None = None
+    countdown_seconds: int = 5
+
+
+def handle_start_screen(frame, renderer, color, start_state, click_state, audio):
+    """Render start button + countdown; update state when clicked/finished."""
+    h, w, _ = frame.shape
+    btn_w, btn_h = 240, 100
+    btn_x1 = int((w - btn_w) / 2)
+    btn_y1 = int((h - btn_h) / 2)
+    btn_x2 = btn_x1 + btn_w
+    btn_y2 = btn_y1 + btn_h
+
+    cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (50, 50, 50), -1)
+    cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (255, 255, 255), 2)
+    start_text = "Start"
+    st_w, st_h = renderer.size(start_text)
+    frame = renderer.draw(
+        frame,
+        [
+            {
+                "text": start_text,
+                "x": btn_x1 + int((btn_w - st_w) / 2),
+                "y": btn_y1 + int((btn_h - st_h) / 2),
+                "color": color,
+            }
+        ],
+    )
+
+    if click_state.get("pos"):
+        click_x, click_y = click_state["pos"]
+        click_state["pos"] = None
+        if btn_x1 <= click_x <= btn_x2 and btn_y1 <= click_y <= btn_y2:
+            start_state.triggered = True
+            start_state.countdown_start_ms = pygame.time.get_ticks()
+
+    if start_state.triggered and start_state.countdown_start_ms is not None:
+        elapsed = (pygame.time.get_ticks() - start_state.countdown_start_ms) / 1000
+        remaining = start_state.countdown_seconds - int(elapsed)
+        if remaining <= 0:
+            start_state.started = True
+            start_state.start_time_ms = audio.ensure_music() or pygame.time.get_ticks()
+        else:
+            countdown_text = f"Starting in {remaining}"
+            c_w, c_h = renderer.size(countdown_text)
+            frame = renderer.draw(
+                frame,
+                [
+                    {
+                        "text": countdown_text,
+                        "x": int((w - c_w) / 2),
+                        "y": int(btn_y1 - c_h - 10),
+                        "color": color,
+                    }
+                ],
+            )
+    else:
+        prompt = "Click Start to begin"
+        p_w, p_h = renderer.size(prompt)
+        frame = renderer.draw(
+            frame,
+            [
+                {
+                    "text": prompt,
+                    "x": int((w - p_w) / 2),
+                    "y": int(btn_y2 + p_h),
+                    "color": color,
+                }
+            ],
+        )
+
+    return frame, start_state
+
+
+def compute_timeline_windows(tid, start_time_ms, indr):
+    elapsed_time = (pygame.time.get_ticks() - start_time_ms) / 1000 if start_time_ms else 0
+    dif = tid - elapsed_time
+    idd = np.where((dif < 0) & (dif > -1.4))
+    idd_text = np.where((dif < 0) & (dif > -1.0))  # clear text after 1s
+    dif2 = dif[indr]
+    idd2 = indr[np.where((dif2 < 1.5) & (dif2 > -1.5))[0]]
+    return elapsed_time, idd, idd_text, idd2
+
+
+def detect_landmarks(tracker, face_tracker, frame_rgb, timestamp_ms):
+    pose_landmarks = tracker.detect(frame_rgb, timestamp_ms)
+    face_landmarks = face_tracker.detect(frame_rgb, timestamp_ms) if face_tracker else None
+    return pose_landmarks, face_landmarks
+
+
+def draw_score(frame, renderer, color, score):
+    h, w, _ = frame.shape
+    ts = f"Score: {score}"
+    text_w, text_h = renderer.size(ts)
+    textX = (w - text_w) / 2
+    textY = (h + text_h) / 2 + int(h / 3.5)
+    return renderer.draw(frame, [{"text": ts, "x": int(textX), "y": int(textY), "color": color}])
+
+
+def process_pose(frame, pose_landmarks, centers, plats, idd2, score, pointl, tracker):
+    if not pose_landmarks or len(pose_landmarks) <= 20:
+        return frame, score, pointl
+
+    h, w, _ = frame.shape
+    landmarks = [
+        (int(landmark.x * w), int(landmark.y * h), (landmark.z * w)) for landmark in pose_landmarks
+    ]
+    HL = (landmarks[20][0], landmarks[20][1])
+    HR = (landmarks[19][0], landmarks[19][1])
+    SL = (landmarks[12][0], landmarks[12][1])
+    SR = (landmarks[11][0], landmarks[11][1])
+
+    try:
+        dis1 = [distance(a, HL) for a in centers]
+        dis2 = [distance(a, HR) for a in centers]
+        dp1 = np.argmin(dis2)
+        dp2 = np.argmin(dis1)
+        if dp1 == dp2 and dis1[dp1] < RADIUS_CLAP and dis2[dp2] < RADIUS_CLAP:
+            ll = dp1
+            cv2.circle(frame, centers[dp1], 40, (144, 238, 144), -1)
+            if len(idd2) > 0:
+                hit_idx = int(idd2[0])
+                if ["mitten", "Vhörn", "Hhörn"][ll] == plats[hit_idx]:
+                    if hit_idx not in pointl:
+                        score += 1
+                        pointl.append(hit_idx)
+    except Exception:
+        pass
+
+    tracker.draw(frame, pose_landmarks)
+    draw_hand_circles(frame, HL, HR, radius=80, thickness=4)
+    cv2.line(frame, SL, HL, (0, 255, 0), 2, cv2.LINE_AA)
+    cv2.line(frame, SR, HR, (0, 255, 0), 2, cv2.LINE_AA)
+    cv2.line(frame, SR, SL, (0, 255, 0), 2, cv2.LINE_AA)
+    return frame, score, pointl
+
+
+def draw_face_overlays(frame, face_landmarks, face_tracker, pose_landmarks):
+    if not face_landmarks:
+        return frame
+    face_tracker.draw(frame, face_landmarks)
+    draw_face_landmarks_points(frame, face_landmarks)
+    if pose_landmarks:
+        draw_arms_bgr(frame, pose_landmarks)
+    return frame
+
+
 def main():
     df, tid, orden, plats, ratt = load_timeline(CSV_FILENAME)
     print(df.head())
     print("start")
 
     audio = AudioManager(pop_path=POP_SOUND, music_path=MUSIC_SOUND)
-    start_time_ms = audio.ensure_music() or pygame.time.get_ticks()
     tracker = PoseTracker(POSE_MODEL_PATH)
     face_tracker = None
     if SHOW_FACE_MESH:
@@ -131,7 +283,6 @@ def main():
             face_tracker = None
     cap = cv2.VideoCapture(0)
     cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
-    cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
     renderer = TextRenderer(font_size=FONT_SIZE, font_path=FONT_PATH)
     color1 = (0, 0, 0)
@@ -141,6 +292,16 @@ def main():
     indr = np.where(ratt == 1)[0]
     screen_w = None
     screen_h = None
+    centers = None
+    text_offsets = None
+    start_state = StartState()
+    click_state = {"pos": None}
+
+    def on_mouse(event, x, y, flags, param):
+        if event == cv2.EVENT_LBUTTONDOWN:
+            param["pos"] = (x, y)
+
+    cv2.setMouseCallback("frame", on_mouse, click_state)
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -148,92 +309,42 @@ def main():
             print("No frame from camera, exiting.")
             break
         frame = cv2.flip(frame, 1)
+        h, w, _ = frame.shape
 
-        elapsed_time = (pygame.time.get_ticks() - start_time_ms) / 1000
-        dif = tid - elapsed_time
-        idd = np.where((dif < 0) & (dif > -1.4))
-        idd_text = np.where((dif < 0) & (dif > -1.0))  # clear text after 1s
-        dif2 = dif[indr]
-        idd2 = indr[np.where((dif2 < 1.5) & (dif2 > -1.5))[0]]
-        if len(idd2) > 0:
-            print(plats[idd2])
+        if centers is None or text_offsets is None:
+            centers, text_offsets = target_positions(w, h)
 
+        frame_base = draw_targets(frame.copy(), centers, alpha=0.7, base_frame=frame)
+
+        if not start_state.started:
+            frame_display, start_state = handle_start_screen(
+                frame_base.copy(), renderer, color2, start_state, click_state, audio
+            )
+            if screen_w is None or screen_h is None:
+                try:
+                    wx, wy, ww, wh = cv2.getWindowImageRect("frame")
+                    if ww > 0 and wh > 0:
+                        screen_w, screen_h = ww, wh
+                except Exception:
+                    screen_w, screen_h = w, h
+            output_frame = cv2.resize(frame_display, (screen_w or w, screen_h or h))
+            cv2.imshow("frame", output_frame)
+            if cv2.waitKey(1) == ord("q"):
+                break
+            continue
+
+        _, idd, idd_text, idd2 = compute_timeline_windows(tid, start_state.start_time_ms, indr)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        frame_timestamp_ms = int(max(0, pygame.time.get_ticks() - start_time_ms))
-        pose_landmarks = tracker.detect(frame_rgb, frame_timestamp_ms)
-        face_landmarks = face_tracker.detect(frame_rgb, frame_timestamp_ms) if face_tracker else None
+        frame_timestamp_ms = int(max(0, pygame.time.get_ticks() - (start_state.start_time_ms or 0)))
+        pose_landmarks, face_landmarks = detect_landmarks(
+            tracker, face_tracker, frame_rgb, frame_timestamp_ms
+        )
 
-        h, w, _ = frame_rgb.shape
-        centers, text_offsets = target_positions(w, h)
-        bg_img = None
-        try:
-            bg_img = cv2.imread(BACKGROUND_IMAGE)
-            if bg_img is not None:
-                bg_img = cv2.resize(bg_img, (w, h))
-        except Exception:
-            bg_img = None
-        base_frame = bg_img if bg_img is not None else np.full((h, w, 3), 128, dtype=np.uint8)
-        frame = draw_targets(base_frame.copy(), centers, alpha=0.7, base_frame=base_frame)
+        frame = draw_text_overlays(frame_base.copy(), idd_text, orden, plats, text_offsets, renderer, color1)
+        frame, score, pointl = process_pose(frame, pose_landmarks, centers, plats, idd2, score, pointl, tracker)
+        frame = draw_face_overlays(frame, face_landmarks, face_tracker, pose_landmarks)
+        frame = draw_score(frame, renderer, color2, score)
 
-        if len(idd[0]) == 2:
-            pr = idd[0][np.where(ratt[idd[0]] == 1)[0]]
-            ind2 = np.where(["mitten", "Vhörn", "Hhörn"] == plats[pr])[0]
-        else:
-            ind2 = []
-
-        frame = draw_text_overlays(frame, idd_text, orden, plats, text_offsets, renderer, color1)
-
-        landmarks = []
-        if pose_landmarks:
-            for landmark in pose_landmarks:
-                landmarks.append((int(landmark.x * w), int(landmark.y * h), (landmark.z * w)))
-
-        if pose_landmarks and len(landmarks) > 20:
-            HL = (landmarks[20][0], landmarks[20][1])
-            HR = (landmarks[19][0], landmarks[19][1])
-
-            try:
-                _ = get_angle((landmarks[12][0], landmarks[12][1]), (landmarks[14][0], landmarks[14][1]), (landmarks[16][0], landmarks[16][1]))
-            except Exception:
-                pass
-
-            try:
-                dis1 = [distance(a, HL) for a in centers]
-                dis2 = [distance(a, HR) for a in centers]
-                dp1 = np.argmin(dis2)
-                dp2 = np.argmin(dis1)
-                if dp1 == dp2 and dis1[dp1] < RADIUS_CLAP and dis2[dp2] < RADIUS_CLAP:
-                    print("KLAPP")
-                    ll = dp1
-                    #Clapp circle
-                    cv2.circle(frame, centers[dp1], 40, (144, 238, 144), -1)
-                    if len(idd2) > 0 and ["mitten", "Vhörn", "Hhörn"][ll] == plats[idd2]:
-                        pr2 = idd2
-                        if pr2 not in pointl:
-                            score += 1
-                            pointl.append(pr2)
-                    if False and len(ind2) > 0:
-                        if ll == ind2:
-                            score += 1
-                            print("SCORE!")
-            except Exception:
-                pass
-            tracker.draw(frame, pose_landmarks)
-            draw_hand_circles(frame, HL, HR)
-
-        if face_landmarks:
-            face_tracker.draw(frame, face_landmarks)
-            draw_face_landmarks_points(frame, face_landmarks)
-            draw_arms_bgr(frame, pose_landmarks)
-
-
-        cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
-        #cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-        ts = "Score: " + str(score)
-        text_w, text_h = renderer.size(ts)
-        textX = (w - text_w) / 2
-        textY = (h + text_h) / 2 + int(h / 3.5)
-        frame = renderer.draw(frame, [{"text": ts, "x": int(textX), "y": int(textY), "color": color2}])
         if screen_w is None or screen_h is None:
             try:
                 wx, wy, ww, wh = cv2.getWindowImageRect("frame")

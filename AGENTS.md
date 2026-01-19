@@ -29,6 +29,7 @@
   - `pip install -r requirements.txt`
 - Run from the project root so relative paths resolve:
   - `python3 po.py`
+- The app opens to a start screen; click "Start" to trigger a 5-second countdown before gameplay begins.
 - Quit the app by pressing `q` in the OpenCV window.
 
 ## Architecture & APIs

@@ -10,6 +10,7 @@ curl -L -o pose_landmarker_full.task https://storage.googleapis.com/mediapipe-mo
 # Optional: face mesh overlay
 curl -L -o face_landmarker.task https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
 python3 po.py
+# In the window, click "Start" to begin; a 5-second countdown will run before gameplay starts.
 ```
 
 Requirements:
@@ -25,6 +26,7 @@ Requirements:
 - MediaPipe Tasks PoseLandmarker runs per frame (`pose_landmarker_full.task` or `POSE_LANDMARKER_MODEL_PATH` env var).
 - Optional: MediaPipe Tasks FaceLandmarker renders a face mesh overlay when `SHOW_FACE_MESH` is enabled and `face_landmarker.task` (or `FACE_LANDMARKER_MODEL_PATH`) is available.
 - Three targets (left, middle, right). Claps are detected when both hands enter the same target radius near scheduled times (`ratt=1` rows).
+- Game flow: start screen with a "Start" button triggers a 5-second countdown, then music + timeline begin.
 - Press `q` to quit.
 
 ## Architecture
