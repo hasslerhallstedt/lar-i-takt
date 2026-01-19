@@ -26,9 +26,9 @@ def target_positions(width, height):
     center_right = (int(width - width / 5), int(height / 4))
 
     offset_x = int(width / 2 - width / 5)
-    offset_y = int(height / 2 - height / 4)
+    offset_y = int(height / 2 - height / 4)+70 #Y offset for answers
     text_offsets = {
-        "mitten": (0, 0),
+        "mitten": (0, -70),
         "Vhörn": (-offset_x, -offset_y),
         "Hhörn": (offset_x, -offset_y),
     }
@@ -48,8 +48,6 @@ def draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color):
     for idx in idd[0]:
         word = orden[idx]
         place = plats[idx]
-        if "ä" in str(word):
-            word = word.replace("ä", "a")
         if len(str(place)) < 4:
             place = "mitten"
         try:
@@ -133,8 +131,7 @@ def main():
         if pose_landmarks and len(landmarks) > 20:
             HL = (landmarks[20][0], landmarks[20][1])
             HR = (landmarks[19][0], landmarks[19][1])
-            SL = (landmarks[12][0], landmarks[12][1])
-            SR = (landmarks[11][0], landmarks[11][1])
+
             try:
                 _ = get_angle((landmarks[12][0], landmarks[12][1]), (landmarks[14][0], landmarks[14][1]), (landmarks[16][0], landmarks[16][1]))
             except Exception:
@@ -148,7 +145,8 @@ def main():
                 if dp1 == dp2 and dis1[dp1] < RADIUS_CLAP and dis2[dp2] < RADIUS_CLAP:
                     print("KLAPP")
                     ll = dp1
-                    cv2.circle(frame, centers[dp1], 10, (255, 0, 255), -1)
+                    #Clapp circle
+                    cv2.circle(frame, centers[dp1], 40, (144, 238, 144), -1)
                     if len(idd2) > 0 and ["mitten", "Vhörn", "Hhörn"][ll] == plats[idd2]:
                         pr2 = idd2
                         if pr2 not in pointl:
@@ -165,7 +163,7 @@ def main():
             cv2.circle(frame, HL, 40, (0, 0, 255), 2)
 
         cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
-        cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+        #cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
         ts = "Score: " + str(score)
         text_w, text_h = renderer.size(ts)
         textX = (w - text_w) / 2
