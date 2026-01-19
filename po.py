@@ -7,14 +7,17 @@ from config import (
     CSV_FILENAME,
     MUSIC_SOUND,
     POP_SOUND,
+    FACE_MODEL_PATH,
     POSE_MODEL_PATH,
     RADIUS_CLAP,
     RADIUS_TARGET,
     FONT_SIZE,
     FONT_PATH,
     BACKGROUND_IMAGE,
+    SHOW_FACE_MESH,
 )
 from geometry import distance, get_angle
+from face_mesh_tracker import FaceMeshTracker
 from pose_tracker import PoseTracker
 from timeline import load_timeline
 from text_renderer import TextRenderer
@@ -61,6 +64,55 @@ def draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color):
         frame = renderer.draw(frame, items)
     return frame
 
+def draw_face_landmarks_points(image_bgr, face_landmarks, radius=1, thickness=-2):
+    """Draw points for one face. face_landmarks: List[NormalizedLandmark]."""
+    h, w = image_bgr.shape[:2]
+    for lm in face_landmarks:
+        x = int(lm.x * w)
+        y = int(lm.y * h)
+        cv2.circle(image_bgr, (x, y), radius, (64, 64, 64), thickness, cv2.LINE_AA)
+# Pose landmark indices
+LS, RS = 11, 12
+LE, RE = 13, 14
+LW, RW = 15, 16
+
+ARM_EDGES = [
+    (LS, LE), (LE, LW),   # left arm
+    (RS, RE), (RE, RW),   # right arm
+]
+
+def draw_arms_bgr(image_bgr, pose_landmarks, thickness=4):
+    """
+    image_bgr: OpenCV image (H,W,3) BGR
+    pose_landmarks: a list of NormalizedLandmark (result.pose_landmarks[0])
+    """
+    h, w = image_bgr.shape[:2]
+
+    def to_px(lm):
+        return int(lm.x * w), int(lm.y * h)
+
+    for a, b in ARM_EDGES:
+        pa = to_px(pose_landmarks[a])
+        pb = to_px(pose_landmarks[b])
+        cv2.line(image_bgr, pa, pb, (64, 64, 64), thickness, cv2.LINE_AA)
+
+    return image_bgr
+
+def draw_hand_circles(frame, hand_right, hand_left, radius=40, color=(64, 64, 64), thickness=4):
+    """Draw circles around detected hand positions.
+
+    Args:
+        frame: The image frame to draw on
+        hand_right: Tuple (x, y) for right hand position
+        hand_left: Tuple (x, y) for left hand position
+        radius: Circle radius in pixels
+        color: BGR color tuple
+        thickness: Line thickness (1 for outline, -1 for filled)
+    """
+    cv2.circle(frame, hand_right, radius, color, thickness)
+    cv2.circle(frame, hand_left, radius, color, thickness)
+    return frame
+
 
 def main():
     df, tid, orden, plats, ratt = load_timeline(CSV_FILENAME)
@@ -70,6 +122,13 @@ def main():
     audio = AudioManager(pop_path=POP_SOUND, music_path=MUSIC_SOUND)
     start_time_ms = audio.ensure_music() or pygame.time.get_ticks()
     tracker = PoseTracker(POSE_MODEL_PATH)
+    face_tracker = None
+    if SHOW_FACE_MESH:
+        try:
+            face_tracker = FaceMeshTracker(FACE_MODEL_PATH)
+        except FileNotFoundError as exc:
+            print(exc)
+            face_tracker = None
     cap = cv2.VideoCapture(0)
     cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
     cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
@@ -102,6 +161,7 @@ def main():
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_timestamp_ms = int(max(0, pygame.time.get_ticks() - start_time_ms))
         pose_landmarks = tracker.detect(frame_rgb, frame_timestamp_ms)
+        face_landmarks = face_tracker.detect(frame_rgb, frame_timestamp_ms) if face_tracker else None
 
         h, w, _ = frame_rgb.shape
         centers, text_offsets = target_positions(w, h)
@@ -159,8 +219,13 @@ def main():
             except Exception:
                 pass
             tracker.draw(frame, pose_landmarks)
-            cv2.circle(frame, HR, 40, (0, 255, 0), 2)
-            cv2.circle(frame, HL, 40, (0, 0, 255), 2)
+            draw_hand_circles(frame, HL, HR)
+
+        if face_landmarks:
+            face_tracker.draw(frame, face_landmarks)
+            draw_face_landmarks_points(frame, face_landmarks)
+            draw_arms_bgr(frame, pose_landmarks)
+
 
         cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
         #cv2.setWindowProperty("frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)

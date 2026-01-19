@@ -10,6 +10,7 @@
 - `config.py`: constants for asset paths and thresholds.
 - `timeline.py`: loads timeline from CSV (`tid;ord;plats;ratt`) or JSON per `resources/lar-i-takt-schema.json`.
 - `pose_tracker.py`: wraps MediaPipe Tasks PoseLandmarker model.
+- `face_mesh_tracker.py`: optional MediaPipe Tasks face mesh setup/detect/draw when enabled.
 - `audio_manager.py`: handles music/pop sounds.
 - `geometry.py`: small math helpers.
 - Assets: `nyfil_gang-1.csv`, `pop.wav`, `Back on track.wav`, `pose_landmarker_full.task` (model), optional JSON content (`resources/lar-i-takt-content.json`).
@@ -18,6 +19,7 @@
 - Python 3 with: `opencv-python`, `mediapipe`, `numpy`, `pandas`, `pygame`, `matplotlib`.
 - A working webcam.
 - Audio files in the working directory: `pop.wav` and any other `.wav` referenced in `po.py` (e.g. `Back on track.wav`).
+- Optional: face mesh model `face_landmarker.task` if `SHOW_FACE_MESH` is enabled.
 
 ## How to run
 - Optional (macOS): create and activate a virtual environment first:
@@ -31,8 +33,9 @@
 
 ## Architecture & APIs
 - MediaPipe Tasks PoseLandmarker (`mediapipe.tasks.python.vision.PoseLandmarker`) with `detect_for_video` on `ImageFormat.SRGB` frames; model path from `POSE_LANDMARKER_MODEL_PATH` or `pose_landmarker_full.task`.
+- Optional MediaPipe Tasks FaceLandmarker when `SHOW_FACE_MESH` is true; model path from `FACE_LANDMARKER_MODEL_PATH` or `face_landmarker.task`.
 - OpenCV for capture/render and simple overlays; Pygame for audio and timing.
-- Modular layout: `po.py` (orchestrator), `config.py` (paths/constants), `timeline.py` (CSV/JSON ingestion), `pose_tracker.py` (model setup/detect/draw), `audio_manager.py`, `geometry.py`.
+- Modular layout: `po.py` (orchestrator), `config.py` (paths/constants), `timeline.py` (CSV/JSON ingestion), `pose_tracker.py` (pose model setup/detect/draw), `face_mesh_tracker.py` (face mesh setup/detect/draw), `audio_manager.py`, `geometry.py`.
 - Targets are fixed to three positions; clap detection compares both hands to target centers within `RADIUS_CLAP`.
 
 ## Data format notes
