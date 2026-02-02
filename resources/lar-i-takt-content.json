@@ -1,194 +1,181 @@
 {
     "lar-i-takt-content": [
         {
-            "timestamp": "13.653",
+            "timestamp": "13.421",
             "question": "inte",
             "place_index": 1,
             "responses": [
                 {
                     "element": "nicht",
-                    "timestamp": "14.861",
+                    "timestamp": "14.350",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "15.743",
+            "timestamp": "15.186",
             "question": "en/ett",
             "place_index": 1,
             "responses": [
                 {
                     "element": "eine",
-                    "timestamp": "16.625",
-                    "place_index": 2,
+                    "timestamp": "16.487",
+                    "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "17.461",
+            "timestamp": "17.322",
             "question": "sig",
             "place_index": 1,
             "responses": [
                 {
                     "element": "sich",
-                    "timestamp": "18.715",
+                    "timestamp": "18.576",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "19.551",
+            "timestamp": "19.412",
             "question": "också",
             "place_index": 1,
             "responses": [
                 {
                     "element": "auch",
-                    "timestamp": "20.341",
+                    "timestamp": "20.713",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "21.641",
+            "timestamp": "21.502",
             "question": "att",
             "place_index": 1,
             "responses": [
                 {
                     "element": "dass",
-                    "timestamp": "22.523",
+                    "timestamp": "22.802",
                     "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "23.359",
+            "timestamp": "23.638",
             "question": "men",
             "place_index": 1,
             "responses": [
                 {
                     "element": "aber",
-                    "timestamp": "24.195",
+                    "timestamp": "24.892",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "25.449",
+            "timestamp": "26.053",
             "question": "är",
             "place_index": 1,
             "responses": [
                 {
                     "element": "sind",
-                    "timestamp": "26.331",
-                    "place_index": 3,
+                    "timestamp": "26.889",
+                    "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "27.074",
+            "timestamp": "29.165",
             "question": "efter",
             "place_index": 1,
             "responses": [
                 {
                     "element": "nach",
-                    "timestamp": "28.003",
-                    "place_index": 2,
+                    "timestamp": "30.001",
+                    "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "28.839",
+            "timestamp": "30.836",
             "question": "ännu",
             "place_index": 1,
             "responses": [
                 {
                     "element": "noch",
-                    "timestamp": "29.675",
-                    "place_index": 2,
+                    "timestamp": "31.672",
+                    "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "30.511",
+            "timestamp": "32.415",
             "question": "om",
             "place_index": 1,
             "responses": [
                 {
                     "element": "wenn",
-                    "timestamp": "31.393",
-                    "place_index": 3,
-                    "correct": "true"
-                }
-            ]
-        },
-        {
-            "timestamp": "32.229",
-            "question": "eller",
-            "place_index": 1,
-            "responses": [
-                {
-                    "element": "oder",
-                    "timestamp": "33.065",
-                    "place_index": 3,
-                    "correct": "true"
-                }
-            ]
-        },
-        {
-            "timestamp": "33.901",
-            "question": "blir",
-            "place_index": 1,
-            "responses": [
-                {
-                    "element": "wird",
-                    "timestamp": "34.783",
-                    "place_index": 3,
-                    "correct": "true"
-                }
-            ]
-        },
-        {
-            "timestamp": "35.619",
-            "question": "bli",
-            "place_index": 1,
-            "responses": [
-                {
-                    "element": "werden",
-                    "timestamp": "36.455",
+                    "timestamp": "33.344",
                     "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "37.291",
-            "question": "en/ett",
+            "timestamp": "34.227",
+            "question": "eller",
             "place_index": 1,
             "responses": [
                 {
-                    "element": "einen",
-                    "timestamp": "38.127",
+                    "element": "oder",
+                    "timestamp": "34.970",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "35.806",
+            "question": "blir",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wird",
+                    "timestamp": "36.734",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "39.195",
-            "question": "ha",
+            "timestamp": "37.617",
+            "question": "bli",
             "place_index": 1,
             "responses": [
                 {
-                    "element": "haben",
+                    "element": "werden",
+                    "timestamp": "38.453",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "39.288",
+            "question": "en/ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "einen",
                     "timestamp": "39.985",
                     "place_index": 2,
                     "correct": "true"
@@ -196,131 +183,144 @@
             ]
         },
         {
-            "timestamp": "41.099",
+            "timestamp": "40.960",
+            "question": "ha",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "haben",
+                    "timestamp": "41.843",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "42.679",
             "question": "en/ett",
             "place_index": 1,
             "responses": [
                 {
                     "element": "einer",
-                    "timestamp": "42.075",
+                    "timestamp": "43.515",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "42.818",
+            "timestamp": "44.258",
             "question": "kan",
             "place_index": 1,
             "responses": [
                 {
                     "element": "kann",
-                    "timestamp": "43.654",
+                    "timestamp": "45.093",
                     "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "44.489",
+            "timestamp": "45.929",
             "question": "över",
             "place_index": 1,
             "responses": [
                 {
                     "element": "über",
-                    "timestamp": "45.325",
-                    "place_index": 3,
+                    "timestamp": "46.905",
+                    "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "46.068",
+            "timestamp": "47.601",
             "question": "då",
             "place_index": 1,
             "responses": [
                 {
                     "element": "dann",
-                    "timestamp": "46.997",
-                    "place_index": 3,
+                    "timestamp": "48.484",
+                    "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "47.880",
+            "timestamp": "49.320",
             "question": "en/ett",
             "place_index": 1,
             "responses": [
                 {
                     "element": "einem",
-                    "timestamp": "48.623",
+                    "timestamp": "50.295",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "49.459",
+            "timestamp": "50.991",
             "question": "redan",
             "place_index": 1,
             "responses": [
                 {
                     "element": "schon",
-                    "timestamp": "50.387",
+                    "timestamp": "51.967",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "51.270",
+            "timestamp": "52.710",
             "question": "har",
             "place_index": 1,
             "responses": [
                 {
                     "element": "habe",
-                    "timestamp": "52.106",
+                    "timestamp": "53.546",
                     "place_index": 2,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "52.941",
+            "timestamp": "55.775",
             "question": "mer",
             "place_index": 1,
             "responses": [
                 {
                     "element": "mehr",
-                    "timestamp": "53.638",
-                    "place_index": 2,
-                    "correct": "true"
-                }
-            ]
-        },
-        {
-            "timestamp": "54.613",
-            "question": "vara",
-            "place_index": 1,
-            "responses": [
-                {
-                    "element": "sein",
-                    "timestamp": "55.496",
+                    "timestamp": "56.518",
                     "place_index": 3,
                     "correct": "true"
                 }
             ]
         },
         {
-            "timestamp": "56.332",
+            "timestamp": "57.447",
+            "question": "vara",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sein",
+                    "timestamp": "58.282",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "59.165",
             "question": "genom",
             "place_index": 1,
             "responses": [
                 {
                     "element": "durch",
-                    "timestamp": "57.168",
-                    "place_index": 2,
+                    "timestamp": "59.954",
+                    "place_index": 3,
                     "correct": "true"
                 }
             ]

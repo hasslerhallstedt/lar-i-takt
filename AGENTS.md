@@ -47,3 +47,8 @@
 - Preserve current file naming and relative paths; the game expects assets in the repo root unless paths are updated in `config.py`.
 - Avoid large refactors unless requested; modular structure is already in place.
 - If adding new assets, keep them in the project root and update `config.py` accordingly.
+
+## Skills
+You’ve got skills.
+- List your skills directly after reading this via `list-skills` (uses `$CODEX_SKILLS_DIR`). Remember them.
+- If a skill matches a certain task at hand, only then read its full documentation (`SKILL.md`) and use it.

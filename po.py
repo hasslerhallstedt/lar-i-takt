@@ -25,16 +25,21 @@ from text_renderer import TextRenderer
 
 
 def target_positions(width, height):
-    center_left = (int(width / 5), int(height / 4))
-    center_mid = (int(width / 2), int(height / 2))
-    center_right = (int(width - width / 5), int(height / 4))
+    """Return target centers and text offsets for left/mid/right lanes."""
+    margin_x = int(width * 0.18)
+    target_y_top = int(height * 0.35)
+    target_y_mid = int(height * 0.8)
 
-    offset_x = int(width / 2 - width / 5)
-    offset_y = int(height / 2 - height / 4)+70 #Y offset for answers
+    center_left = (margin_x, target_y_top)
+    center_mid = (width // 2, target_y_mid)
+    center_right = (width - margin_x, target_y_top)
+
+    gap_y = int(height * 0.23)  # raise text above targets
+    offset_x = center_mid[0] - center_left[0]
     text_offsets = {
-        "mitten": (0, -70),
-        "Vhörn": (-offset_x, -offset_y),
-        "Hhörn": (offset_x, -offset_y),
+        "mitten": (0, int(-target_y_mid) ),
+        "Vhörn": (-offset_x, -gap_y),
+        "Hhörn": (offset_x, -gap_y),
     }
     return (center_left, center_mid, center_right), text_offsets
 
@@ -144,8 +149,8 @@ def handle_start_screen(frame, renderer, color, start_state, click_state, audio)
     btn_x2 = btn_x1 + btn_w
     btn_y2 = btn_y1 + btn_h
 
-    cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (50, 50, 50), -1)
-    cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (255, 255, 255), 2)
+    #cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (50, 50, 50), -1)
+    #cv2.rectangle(frame, (btn_x1, btn_y1), (btn_x2, btn_y2), (255, 255, 255), 2)
     start_text = "Start"
     st_w, st_h = renderer.size(start_text)
     frame = renderer.draw(
@@ -262,9 +267,7 @@ def process_pose(frame, pose_landmarks, centers, plats, idd2, score, pointl, tra
 
     tracker.draw(frame, pose_landmarks)
     draw_hand_circles(frame, HL, HR, radius=80, thickness=4)
-    cv2.line(frame, SL, HL, (0, 255, 0), 2, cv2.LINE_AA)
-    cv2.line(frame, SR, HR, (0, 255, 0), 2, cv2.LINE_AA)
-    cv2.line(frame, SR, SL, (0, 255, 0), 2, cv2.LINE_AA)
+    cv2.line(frame, SR, SL, (64, 64, 64), 2, cv2.LINE_AA)
     return frame, score, pointl
 
 
@@ -303,6 +306,7 @@ def main():
     indr = np.where(ratt == 1)[0]
     screen_w = None
     screen_h = None
+    background = None
     centers = None
     text_offsets = None
     start_state = StartState()
@@ -324,8 +328,10 @@ def main():
 
         if centers is None or text_offsets is None:
             centers, text_offsets = target_positions(w, h)
+        if background is None or background.shape[:2] != (h, w):
+            background = load_background_frame(w, h)
 
-        frame_base = draw_targets(frame.copy(), centers, alpha=0.7, base_frame=frame)
+        frame_base = draw_targets(background.copy(), centers, alpha=0.7, base_frame=background)
 
         if not start_state.started:
             frame_display, start_state = handle_start_screen(
