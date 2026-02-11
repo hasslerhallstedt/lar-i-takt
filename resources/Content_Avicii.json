@@ -1,0 +1,1304 @@
+{
+    "lar-i-takt-content": [
+        {
+            "timestamp": "8.835",
+            "question": "inte",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "nicht",
+                    "timestamp": "9.311",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "9.787",
+            "question": "en/ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "eine",
+                    "timestamp": "10.263",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "10.739",
+            "question": "sig",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sich",
+                    "timestamp": "11.215",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "11.691",
+            "question": "också",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "auch",
+                    "timestamp": "12.144",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "12.643",
+            "question": "att",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dass",
+                    "timestamp": "13.119",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "13.595",
+            "question": "men",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "aber",
+                    "timestamp": "14.071",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "14.547",
+            "question": "är",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sind",
+                    "timestamp": "15.023",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "15.499",
+            "question": "efter",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "nach",
+                    "timestamp": "15.975",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "16.451",
+            "question": "ännu",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "noch",
+                    "timestamp": "16.927",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "17.403",
+            "question": "om",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wenn",
+                    "timestamp": "17.879",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "18.355",
+            "question": "eller",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "oder",
+                    "timestamp": "18.831",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "19.307",
+            "question": "blir",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wird",
+                    "timestamp": "19.772",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "20.259",
+            "question": "bli",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "werden",
+                    "timestamp": "20.735",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "21.211",
+            "question": "en/ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "einen",
+                    "timestamp": "21.687",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "22.163",
+            "question": "ha",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "haben",
+                    "timestamp": "22.639",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "23.127",
+            "question": "en/ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "einer",
+                    "timestamp": "23.591",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "24.067",
+            "question": "kan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "kann",
+                    "timestamp": "24.543",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "25.031",
+            "question": "över",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "über",
+                    "timestamp": "25.507",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "25.972",
+            "question": "då",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dann",
+                    "timestamp": "26.459",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "26.935",
+            "question": "en/ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "einem",
+                    "timestamp": "27.411",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "27.887",
+            "question": "redan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "schon",
+                    "timestamp": "28.363",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "28.839",
+            "question": "har",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "habe",
+                    "timestamp": "29.304",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "29.780",
+            "question": "mer",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "mehr",
+                    "timestamp": "30.267",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "30.743",
+            "question": "vara",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sein",
+                    "timestamp": "31.219",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "31.695",
+            "question": "genom",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "durch",
+                    "timestamp": "32.171",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "32.647",
+            "question": "här",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "hier",
+                    "timestamp": "33.123",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "33.599",
+            "question": "mig",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "mich",
+                    "timestamp": "34.075",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "34.551",
+            "question": "dock",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "doch",
+                    "timestamp": "35.027",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "35.503",
+            "question": "alltid",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "immer",
+                    "timestamp": "35.979",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "36.455",
+            "question": "nu",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "jetzt",
+                    "timestamp": "36.931",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "37.407",
+            "question": "denna",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "diese",
+                    "timestamp": "37.883",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "38.348",
+            "question": "blev",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wurde",
+                    "timestamp": "38.801",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "39.277",
+            "question": "igen",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wieder",
+                    "timestamp": "39.764",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "40.240",
+            "question": "inga",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "keine",
+                    "timestamp": "40.728",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "41.204",
+            "question": "alla",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "alle",
+                    "timestamp": "41.680",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "42.167",
+            "question": "mycket",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sehr",
+                    "timestamp": "42.632",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "43.119",
+            "question": "kunna",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "können",
+                    "timestamp": "43.595",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "44.071",
+            "question": "måste",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "muss",
+                    "timestamp": "44.547",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "45.023",
+            "question": "under",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "unter",
+                    "timestamp": "45.500",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "45.976",
+            "question": "finns",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "gibt",
+                    "timestamp": "46.440",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "46.928",
+            "question": "hade",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "hatte",
+                    "timestamp": "47.404",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "47.880",
+            "question": "deras",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "ihre",
+                    "timestamp": "48.356",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "48.832",
+            "question": "denna",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dieser",
+                    "timestamp": "49.308",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "49.784",
+            "question": "mot",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "gegen",
+                    "timestamp": "50.248",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "50.736",
+            "question": "hans",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "seine",
+                    "timestamp": "51.212",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "51.688",
+            "question": "allt",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "alles",
+                    "timestamp": "52.175",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "52.640",
+            "question": "alltså",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "also",
+                    "timestamp": "53.116",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "53.592",
+            "question": "går",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "geht",
+                    "timestamp": "54.079",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "54.544",
+            "question": "mycket",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "viel",
+                    "timestamp": "55.020",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "55.496",
+            "question": "tid",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "zeit",
+                    "timestamp": "55.972",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "56.448",
+            "question": "helt",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "ganz",
+                    "timestamp": "56.935",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "57.411",
+            "question": "göra",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "machen",
+                    "timestamp": "57.887",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "58.352",
+            "question": "för",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "denn",
+                    "timestamp": "58.828",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "59.315",
+            "question": "mina",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "meine",
+                    "timestamp": "59.791",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "60.256",
+            "question": "så att",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "damit",
+                    "timestamp": "60.743",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "61.219",
+            "question": "vill",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "will",
+                    "timestamp": "61.695",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "62.171",
+            "question": "enkelt",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "einfach",
+                    "timestamp": "62.647",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "63.123",
+            "question": "utan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "ohne",
+                    "timestamp": "63.599",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "64.075",
+            "question": "eftersom",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "weil",
+                    "timestamp": "64.551",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "65.027",
+            "question": "vid",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "beim",
+                    "timestamp": "65.503",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "65.980",
+            "question": "något",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "etwas",
+                    "timestamp": "66.456",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "66.932",
+            "question": "var",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "waren",
+                    "timestamp": "67.408",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "67.884",
+            "question": "två",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "zwei",
+                    "timestamp": "68.360",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "68.836",
+            "question": "min",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "mein",
+                    "timestamp": "69.312",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "69.788",
+            "question": "ett",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "eines",
+                    "timestamp": "70.264",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "70.740",
+            "question": "ingen",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "kein",
+                    "timestamp": "71.216",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "71.692",
+            "question": "sedan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "seit",
+                    "timestamp": "72.168",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "72.644",
+            "question": "ska",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "soll",
+                    "timestamp": "73.120",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "73.596",
+            "question": "själv",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "selbst",
+                    "timestamp": "74.072",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "74.548",
+            "question": "dig",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dich",
+                    "timestamp": "75.024",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "75.500",
+            "question": "människor",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "menschen",
+                    "timestamp": "75.976",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "76.452",
+            "question": "idag",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "heute",
+                    "timestamp": "76.928",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "77.415",
+            "question": "kommer",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "kommt",
+                    "timestamp": "77.880",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "78.356",
+            "question": "ingenting",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "nichts",
+                    "timestamp": "78.832",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "79.308",
+            "question": "skulle",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "würde",
+                    "timestamp": "79.784",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "80.260",
+            "question": "leva",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "leben",
+                    "timestamp": "80.736",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "81.212",
+            "question": "gör",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "macht",
+                    "timestamp": "81.688",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "82.175",
+            "question": "andra",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "anderen",
+                    "timestamp": "82.651",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "83.127",
+            "question": "Tyskland",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "deutschland",
+                    "timestamp": "83.603",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "84.079",
+            "question": "år",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "jahr",
+                    "timestamp": "84.544",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "85.020",
+            "question": "år",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "jahren",
+                    "timestamp": "85.507",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "85.983",
+            "question": "hans",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "seiner",
+                    "timestamp": "86.448",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "86.924",
+            "question": "många",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "viele",
+                    "timestamp": "87.400",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "87.888",
+            "question": "mellan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "zwischen",
+                    "timestamp": "88.375",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "88.863",
+            "question": "år",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "jahre",
+                    "timestamp": "89.327",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "89.815",
+            "question": "vore",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wäre",
+                    "timestamp": "90.337",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "90.871",
+            "question": "denna",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "diesem",
+                    "timestamp": "91.405",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "91.928",
+            "question": "detta",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dieses",
+                    "timestamp": "92.404",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "92.880",
+            "question": "blev",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "wurden",
+                    "timestamp": "93.344",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "93.820",
+            "question": "samtidigt",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dabei",
+                    "timestamp": "94.261",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "94.726",
+            "question": "där",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "dort",
+                    "timestamp": "95.202",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "95.713",
+            "question": "måste",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "müssen",
+                    "timestamp": "96.189",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "96.665",
+            "question": "just",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "gerade",
+                    "timestamp": "97.141",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "97.628",
+            "question": "nya",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "neue",
+                    "timestamp": "98.116",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "98.592",
+            "question": "utan",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sondern",
+                    "timestamp": "99.068",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "99.544",
+            "question": "först",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "erst",
+                    "timestamp": "100.020",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "100.496",
+            "question": "första",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "ersten",
+                    "timestamp": "100.972",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "101.448",
+            "question": "deras",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "ihrer",
+                    "timestamp": "101.924",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "102.400",
+            "question": "låta",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "lassen",
+                    "timestamp": "102.876",
+                    "place_index": 2,
+                    "correct": "true"
+                }
+            ]
+        },
+        {
+            "timestamp": "103.352",
+            "question": "borde",
+            "place_index": 1,
+            "responses": [
+                {
+                    "element": "sollte",
+                    "timestamp": "103.828",
+                    "place_index": 3,
+                    "correct": "true"
+                }
+            ]
+        }
+    ]
+}
