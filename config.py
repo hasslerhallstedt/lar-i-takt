@@ -2,7 +2,7 @@ import os
 
 # Assets and data
 #CSV_FILENAME = "resources/nyfil_gang-1.csv"
-CSV_FILENAME = "resources/Content_Tyska_glosor_Master.json"
+CSV_FILENAME = "resources/Content_Tyska_glosor_Master_avgdiff.json"
 POP_SOUND = "resources/pop.wav"
 MUSIC_SOUND = "resources/Avicii.mp3"
 POSE_MODEL_PATH = os.getenv("POSE_LANDMARKER_MODEL_PATH", "pose_landmarker_full.task")
