@@ -37,7 +37,7 @@ def target_positions(width, height):
     gap_y = int(height * 0.23)  # raise text above targets
     offset_x = center_mid[0] - center_left[0]
     text_offsets = {
-        "mitten": (0, int(-target_y_mid) ),
+        "mitten": (0, -gap_y),
         "Vhörn": (-offset_x, -gap_y),
         "Hhörn": (offset_x, -gap_y),
     }
@@ -51,7 +51,7 @@ def draw_targets(frame, centers, alpha, base_frame):
     return cv2.addWeighted(frame, alpha, base_frame, 1 - alpha, 0)
 
 
-def draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color):
+def draw_text_overlays(frame, idd, orden, plats, centers, text_offsets, renderer, color):
     h, w, _ = frame.shape
     items = []
     for idx in idd[0]:
@@ -61,8 +61,13 @@ def draw_text_overlays(frame, idd, orden, plats, text_offsets, renderer, color):
             place = "mitten"
         try:
             text_w, text_h = renderer.size(str(word))
-            text_x = (w - text_w) / 2 + text_offsets[place][0]
-            text_y = (h + text_h) / 2 + text_offsets[place][1]
+            if place == "mitten":
+                center_x, center_y = centers[1]
+                text_x = center_x - (text_w / 2)
+                text_y = center_y + (text_h / 2)
+            else:
+                text_x = (w - text_w) / 2 + text_offsets[place][0]
+                text_y = (h + text_h) / 2 + text_offsets[place][1]
             items.append({"text": word, "x": int(text_x), "y": int(text_y), "color": color})
         except ValueError:
             pass
@@ -226,12 +231,13 @@ def detect_landmarks(tracker, face_tracker, frame_rgb, timestamp_ms):
     return pose_landmarks, face_landmarks
 
 
-def draw_score(frame, renderer, color, score):
-    h, w, _ = frame.shape
+def draw_score(frame, centers, renderer, color, score):
     ts = f"Score: {score}"
     text_w, text_h = renderer.size(ts)
-    textX = (w - text_w) / 2
-    textY = (h + text_h) / 2 + int(h / 3.5)
+    center_x = (centers[0][0] + centers[2][0]) / 2
+    center_y = centers[0][1]
+    textX = center_x - (text_w / 2)
+    textY = center_y - (text_h / 2)
     return renderer.draw(frame, [{"text": ts, "x": int(textX), "y": int(textY), "color": color}])
 
 
@@ -357,10 +363,10 @@ def main():
             tracker, face_tracker, frame_rgb, frame_timestamp_ms
         )
 
-        frame = draw_text_overlays(frame_base.copy(), idd_text, orden, plats, text_offsets, renderer, color1)
+        frame = draw_text_overlays(frame_base.copy(), idd_text, orden, plats, centers, text_offsets, renderer, color1)
         frame, score, pointl = process_pose(frame, pose_landmarks, centers, plats, idd2, score, pointl, tracker)
         frame = draw_face_overlays(frame, face_landmarks, face_tracker, pose_landmarks)
-        frame = draw_score(frame, renderer, color2, score)
+        frame = draw_score(frame, centers, renderer, color2, score)
 
         if screen_w is None or screen_h is None:
             try:
