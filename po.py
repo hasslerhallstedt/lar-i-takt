@@ -219,7 +219,7 @@ def compute_timeline_windows(tid, start_time_ms, indr):
     elapsed_time = (pygame.time.get_ticks() - start_time_ms) / 1000 if start_time_ms else 0
     dif = tid - elapsed_time
     idd = np.where((dif < 0) & (dif > -1.4))
-    idd_text = np.where((dif < 0) & (dif > -1.0))  # clear text after 1s
+    idd_text = np.where((dif < 0) & (dif > -1.2))  # clear text after 1.2s
     dif2 = dif[indr]
     idd2 = indr[np.where((dif2 < 1.5) & (dif2 > -1.5))[0]]
     return elapsed_time, idd, idd_text, idd2

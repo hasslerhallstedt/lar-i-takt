@@ -1,0 +1,1304 @@
+{
+  "lar-i-takt-content": [
+    {
+      "timestamp": "8.575",
+      "question": "skolutbytet",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Schüleraustausch",
+          "timestamp": "9.527",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "12.384",
+      "question": "förhoppningsvis",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "hoffentlich",
+          "timestamp": "13.337",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "16.194",
+      "question": "efternamnet",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Nachname",
+          "timestamp": "17.146",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "20.003",
+      "question": "förnamnet",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Vorname",
+          "timestamp": "20.956",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "23.813",
+      "question": "riktnumret",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Vorwahl",
+          "timestamp": "24.765",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "27.622",
+      "question": "yrket",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Beruf",
+          "timestamp": "28.575",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "31.432",
+      "question": "tyskkunskaper",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "Deutschkenntnisse",
+          "timestamp": "32.384",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "35.241",
+      "question": "bestå av",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "bestehen aus",
+          "timestamp": "36.194",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "39.051",
+      "question": "vardagslivet",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "das Alltagsleben",
+          "timestamp": "40.003",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "42.860",
+      "question": "delta",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "teilnehmen an",
+          "timestamp": "43.813",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "46.670",
+      "question": "tro",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "glauben",
+          "timestamp": "47.622",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "50.479",
+      "question": "enastående",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "einmalig",
+          "timestamp": "51.432",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "54.289",
+      "question": "erfarenheten",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Erfahrung",
+          "timestamp": "55.241",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "58.098",
+      "question": "glad",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "fröhlich",
+          "timestamp": "59.051",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "61.908",
+      "question": "social",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "kontaktfreudig",
+          "timestamp": "62.860",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "65.717",
+      "question": "pålitlig",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "zuverlässig",
+          "timestamp": "66.670",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "69.527",
+      "question": "ansvarsfull",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "verantwortungsvoll",
+          "timestamp": "70.479",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "73.336",
+      "question": "passa på",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "aufpassen auf",
+          "timestamp": "74.289",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "77.146",
+      "question": "köket",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Küche",
+          "timestamp": "78.098",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "80.955",
+      "question": "laget",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Mannschaft",
+          "timestamp": "81.908",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "84.765",
+      "question": "träna",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "trainieren",
+          "timestamp": "85.717",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "88.574",
+      "question": "koppla av",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sich entspannen",
+          "timestamp": "89.527",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "92.384",
+      "question": "promenera",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "spazieren gehen",
+          "timestamp": "93.336",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "96.193",
+      "question": "anteckna, skriva upp",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "notieren",
+          "timestamp": "97.146",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "100.003",
+      "question": "skillnaden",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Unterschied",
+          "timestamp": "100.955",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "103.812",
+      "question": "berätta",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "erzählen",
+          "timestamp": "104.765",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "107.622",
+      "question": "jättespännande",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "echt spannend",
+          "timestamp": "108.574",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "111.431",
+      "question": "se efter",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nachschauen",
+          "timestamp": "112.384",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "115.241",
+      "question": "rapporten",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Bericht",
+          "timestamp": "116.193",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "119.050",
+      "question": "entusiastisk",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "begeistert",
+          "timestamp": "120.003",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "122.860",
+      "question": "just",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "gerade",
+          "timestamp": "123.812",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "126.669",
+      "question": "precis",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "genau",
+          "timestamp": "127.622",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "130.479",
+      "question": "flytande",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "fließend",
+          "timestamp": "131.431",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "134.288",
+      "question": "långt",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "weit",
+          "timestamp": "135.241",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "138.098",
+      "question": "nästan",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nahezu",
+          "timestamp": "139.050",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "141.907",
+      "question": "annorlunda än",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "anders als",
+          "timestamp": "142.860",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "145.717",
+      "question": "träffas",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sich treffen",
+          "timestamp": "146.669",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "149.526",
+      "question": "på något sätt",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "irgendwie",
+          "timestamp": "150.479",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "153.336",
+      "question": "ganska",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "ziemlich",
+          "timestamp": "154.288",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "157.145",
+      "question": "trevlig (t), snäll(t)",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nett",
+          "timestamp": "158.098",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "160.955",
+      "question": "helt fel",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "total falsch",
+          "timestamp": "161.907",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "164.764",
+      "question": "tjock",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "dick",
+          "timestamp": "165.717",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "168.574",
+      "question": "få, lite",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "wenig",
+          "timestamp": "169.526",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "172.383",
+      "question": "genast",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sofort",
+          "timestamp": "173.336",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "176.193",
+      "question": "puben, krogen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Kneipe",
+          "timestamp": "177.145",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "180.002",
+      "question": "dyr",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "teuer",
+          "timestamp": "180.955",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "183.812",
+      "question": "i början",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "am Anfang",
+          "timestamp": "184.764",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "187.621",
+      "question": "sakna",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "vermissen",
+          "timestamp": "188.574",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "191.431",
+      "question": "knappast",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "kaum",
+          "timestamp": "192.383",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "195.240",
+      "question": "istället, i gengäld",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "dafür",
+          "timestamp": "196.193",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "199.050",
+      "question": "jag tycker om",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "es gefällt mir",
+          "timestamp": "200.002",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "202.859",
+      "question": "säkert",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "bestimmt",
+          "timestamp": "203.812",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "206.669",
+      "question": "färsk",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "frisch",
+          "timestamp": "207.621",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "210.478",
+      "question": "likartad, liknande",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "ähnlich",
+          "timestamp": "211.431",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "214.288",
+      "question": "aldrig",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nie",
+          "timestamp": "215.240",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "218.097",
+      "question": "det främmande språket",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Fremdsprache",
+          "timestamp": "219.050",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "221.907",
+      "question": "fortsätta",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "weitermachen",
+          "timestamp": "222.859",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "225.716",
+      "question": "undervisningen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Unterricht",
+          "timestamp": "226.669",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "229.526",
+      "question": "ungefär",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "etwa",
+          "timestamp": "230.478",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "233.335",
+      "question": "motsatsen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Gegensatz",
+          "timestamp": "234.288",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "237.145",
+      "question": "därför",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "deswegen",
+          "timestamp": "238.097",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "240.954",
+      "question": "smörgåsen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "das Pausenbrot",
+          "timestamp": "241.907",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "244.764",
+      "question": "göra något",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "etwas unternehmen",
+          "timestamp": "245.716",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "248.573",
+      "question": "till, tills",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "bis",
+          "timestamp": "249.526",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "252.383",
+      "question": "rolig(t), (lustigt)",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "witzig",
+          "timestamp": "253.335",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "256.192",
+      "question": "syskonen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Geschwister",
+          "timestamp": "257.145",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "260.002",
+      "question": "förskräckt, chockad",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "entsetzt",
+          "timestamp": "260.954",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "263.811",
+      "question": "tilltala",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "anreden",
+          "timestamp": "264.764",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "267.621",
+      "question": "hämning",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Hemmung",
+          "timestamp": "268.573",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "271.430",
+      "question": "vänja sig vid",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sich gewöhnen an",
+          "timestamp": "272.383",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "275.240",
+      "question": "framför allt",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "vor allem",
+          "timestamp": "276.192",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "279.049",
+      "question": "ha roligt",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "Spaß haben",
+          "timestamp": "280.002",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "282.859",
+      "question": "fritidssysselsättningen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Freizeitbeschäftigung",
+          "timestamp": "283.811",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "286.668",
+      "question": "fritidsaktiviteten",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Freizeitaktivität",
+          "timestamp": "287.621",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "290.478",
+      "question": "puben, krogen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Kneipe",
+          "timestamp": "291.430",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "294.287",
+      "question": "idrotta",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "Sport treiben",
+          "timestamp": "295.239",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "298.097",
+      "question": "allt fler",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "immer mehr",
+          "timestamp": "299.049",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "301.906",
+      "question": "ungdomar",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "Jugendliche",
+          "timestamp": "302.858",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "305.716",
+      "question": "svaret",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Antwort",
+          "timestamp": "306.668",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "309.525",
+      "question": "i timmar",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "stundenlang",
+          "timestamp": "310.477",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "313.335",
+      "question": "nästan varje dag",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "fast jeden Tag",
+          "timestamp": "314.287",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "317.144",
+      "question": "upplevelsen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "das Erlebnis",
+          "timestamp": "318.096",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "320.954",
+      "question": "kalla",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nennen",
+          "timestamp": "321.906",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "324.763",
+      "question": "föreningen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Verein",
+          "timestamp": "325.715",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "328.573",
+      "question": "matchen",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "das Spiel",
+          "timestamp": "329.525",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "332.382",
+      "question": "laget",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die Mannschaft",
+          "timestamp": "333.334",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "336.192",
+      "question": "se upp, se dig för",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "aufpassen",
+          "timestamp": "337.144",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "340.001",
+      "question": "skada sig, slå sig",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sich verletzen",
+          "timestamp": "340.953",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "343.811",
+      "question": "koppla av",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "sich entspannen",
+          "timestamp": "344.763",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "347.620",
+      "question": "ganska",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "ziemlich",
+          "timestamp": "348.572",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "351.430",
+      "question": "uppträda",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "auftreten",
+          "timestamp": "352.382",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "355.239",
+      "question": "endast, bara",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "nur",
+          "timestamp": "356.191",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "359.049",
+      "question": "på fritiden",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "in meiner Freizeit",
+          "timestamp": "360.001",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "362.858",
+      "question": "hos någon",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "bei jemandem",
+          "timestamp": "363.810",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "366.668",
+      "question": "nästan inte, knappast",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "kaum",
+          "timestamp": "367.620",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "370.477",
+      "question": "det är roligt",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "es macht Spaß",
+          "timestamp": "371.429",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "374.287",
+      "question": "tillbringa",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "verbringen",
+          "timestamp": "375.239",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "378.096",
+      "question": "datorn",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Computer",
+          "timestamp": "379.048",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "381.906",
+      "question": "rådet",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "der Rat",
+          "timestamp": "382.858",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "385.715",
+      "question": "den senaste tiden",
+      "place_index": 1,
+      "responses": [
+        {
+          "element": "die letzte Zeit",
+          "timestamp": "386.667",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    }
+  ]
+}
