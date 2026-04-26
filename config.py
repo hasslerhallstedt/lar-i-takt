@@ -2,9 +2,9 @@ import os
 
 # Assets and data
 #CSV_FILENAME = "resources/nyfil_gang-1.csv"
-CSV_FILENAME = "resources/Content_Tyska_glosor_Master_offset_-260ms_q_ts_skip_every_other_pair_full.json"
+CSV_FILENAME = "resources/Kendrick-Lamar-HUMBLE.-Prod.-By-A-Pluss-Mike-WiLL-Made-It_question_element_pattern_from_8.160.json"
 POP_SOUND = "resources/pop.wav"
-MUSIC_SOUND = "resources/Avicii.mp3"
+MUSIC_SOUND = "resources/Kendrick-Lamar-HUMBLE.-Prod.-By-A-Pluss-Mike-WiLL-Made-It.mp3"
 POSE_MODEL_PATH = os.getenv("POSE_LANDMARKER_MODEL_PATH", "pose_landmarker_full.task")
 FACE_MODEL_PATH = os.getenv("FACE_LANDMARKER_MODEL_PATH", "face_landmarker.task")
 FONT_SIZE = 48
