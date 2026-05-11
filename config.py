@@ -2,7 +2,7 @@ import os
 
 # Assets and data
 #CSV_FILENAME = "resources/nyfil_gang-1.csv"
-CSV_FILENAME = "resources/Kendrick-Lamar-HUMBLE.-Prod.-By-A-Pluss-Mike-WiLL-Made-It_question_element_pattern_from_8.160.json"
+CSV_FILENAME = "resources/lar-i-takt-timeline TEST2.json"
 POP_SOUND = "resources/pop.wav"
 MUSIC_SOUND = "resources/Kendrick-Lamar-HUMBLE.-Prod.-By-A-Pluss-Mike-WiLL-Made-It.mp3"
 POSE_MODEL_PATH = os.getenv("POSE_LANDMARKER_MODEL_PATH", "pose_landmarker_full.task")

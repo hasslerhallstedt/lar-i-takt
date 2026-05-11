@@ -1,0 +1,238 @@
+{
+  "lar-i-takt-content": [
+    {
+      "timestamp": "9.365",
+      "question": "",
+      "place_index": 1,
+      "responses": [
+        {
+          "timestamp": "9.365",
+          "element": "gehen",
+          "place_index": 1,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "11.36",
+      "question": "komma",
+      "place_index": 1,
+      "responses": [
+        {
+          "timestamp": "12.565",
+          "element": "kommen",
+          "place_index": 1,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "14.56",
+      "question": "göra",
+      "place_index": 1,
+      "responses": [
+        {
+          "timestamp": "15.765",
+          "element": "machen",
+          "place_index": 1,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "17.76",
+      "question": "säga",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "18.955",
+          "element": "sagen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "20.949",
+      "question": "fråga",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "22.155",
+          "element": "fragen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "24.149",
+      "question": "svara",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "25.355",
+          "element": "antworten",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "27.339",
+      "question": "se",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "28.544",
+          "element": "sehen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "30.539",
+      "question": "tycka / hitta",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "31.744",
+          "element": "finden",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "33.728",
+      "question": "träffa",
+      "place_index": 3,
+      "responses": [
+        {
+          "timestamp": "34.933",
+          "element": "treffen",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "36.928",
+      "question": "spela",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "38.133",
+          "element": "spielen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "40.117",
+      "question": "lyssna",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "41.323",
+          "element": "hören",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "43.317",
+      "question": "läsa",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "44.523",
+          "element": "lesen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "46.528",
+      "question": "stanna",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "47.744",
+          "element": "bleiben",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "49.771",
+      "question": "arbeta",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "50.976",
+          "element": "arbeiten",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "52.96",
+      "question": "lära sig",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "54.165",
+          "element": "lernen",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "56.16",
+      "question": "vän",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "57.365",
+          "element": "der Freund / die Freundin",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "59.36",
+      "question": "människor",
+      "place_index": 3,
+      "responses": [
+        {
+          "timestamp": "60.555",
+          "element": "die Leute",
+          "place_index": 3,
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "timestamp": "62.549",
+      "question": "familj",
+      "place_index": 2,
+      "responses": [
+        {
+          "timestamp": "63.755",
+          "element": "die Familie",
+          "place_index": 2,
+          "correct": "true"
+        }
+      ]
+    }
+  ]
+}

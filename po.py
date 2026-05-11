@@ -23,6 +23,8 @@ from pose_tracker import PoseTracker
 from timeline import load_timeline
 from text_renderer import TextRenderer
 
+SCORE_WINDOW_SECONDS = 0.8
+
 
 def target_positions(width, height):
     """Return target centers and text offsets for left/mid/right lanes."""
@@ -221,7 +223,7 @@ def compute_timeline_windows(tid, start_time_ms, indr):
     idd = np.where((dif < 0) & (dif > -1.4))
     idd_text = np.where((dif < 0) & (dif > -1.2))  # clear text after 1.2s
     dif2 = dif[indr]
-    idd2 = indr[np.where((dif2 < 1.5) & (dif2 > -1.5))[0]]
+    idd2 = indr[np.where((dif2 < SCORE_WINDOW_SECONDS) & (dif2 > -SCORE_WINDOW_SECONDS))[0]]
     return elapsed_time, idd, idd_text, idd2
 
 
